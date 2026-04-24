@@ -1,0 +1,154 @@
+/*Resete des styles par defaut pour s'assurer que tous les navigateurs n'affichent pas les contenus de maniere uniforme*/
+* {
+  margin: 0; /*Supprimer les marges externes par defaut*/
+  padding: o; /*Supprimer les marges internes par defauts*/
+  font-family: Arial, Sans-serif; /* Definir la police globale de la page*/
+  box-sizing: border-box; /*Permet de garder la taille des elements corrects*/
+}
+/*=== EN-TETE (HEADER) ===*/
+/*Contener de l'en-tete */
+header {
+  background-color: black; /* Definir une couleur de fond noir*/
+  opacity: 0.8; /* Rend legerement transparant l'en-tete*/
+  padding: 15px 5%; /*Ajouter un espace interieur ( haut et bas: 15px, gauche et droite:5% de la largeur*/
+}
+/*Structure du div: texte a gauche et menu a droite*/
+.nav-contener {
+  display: flex; /* Active le mode flexbox*/
+  justify-content: space-between; /*Place le logo a gauche et le menu a droite*/
+  align-items: center; /*Centre verticalement qui permet d'aligner des elements*/
+  max-width: 1200px; /*Definit une largeur maximale pour ne pas depasser sur les grands écrans*/
+  margin: auto; /*Centre le header horizontalement*/
+}
+/*Style du logo CAFÉ ROSE */
+.logo {
+  color: pink;
+  font-size: 24px;
+  font-weight: bold;
+}
+.logo span {
+  color: white;
+}
+/*====== MENU DE NAVIGATION =====*/
+
+/*Style du menu*/
+.nav-links {
+  list-style: none; /*Supprimer les puces sur des listes*/
+  display: flex; /*Place des elements du menu sur une seule ligne*/
+}
+/*Espace entre les elements du menu*/
+.nav-links li {
+  margin-left: 20px;
+}
+/* Style des liens du menu*/
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+}
+/*===== IMAGE PRINCIPALE =====*/
+.hero img {
+  width: 100%; /* l'image prend toute la largeur de la page*/
+  height: auto; /*Ajuste automatiquement la hauteur*/
+  display: block; /* permet de changer le type d'element*/
+}
+/* =====SECTION AVEC FORMULAIRE ET VIDEO=====*/
+/*Conteneur principal regroupant le formulaire et la video*/
+
+.content-section {
+  display: flex; /* Utilisation de flexbox pour aligner les elements sur une seule ligne*/
+  justify-content: space-between;
+  align-items: center;
+  width: 90%; /* Reduit la largeur a 90% pour ne pas toucher les bordures*/
+  max-width: 1200px;
+  margin: 50px auto; /* l'espace en haut et en bas de 50px et centrer horizontalement*/
+}
+/*=====FORMULAIRE D'INSCRIPTION=====*/
+/* Cnteneur du formulaire*/
+.form-section {
+  width: 45%; /* le formulaire prend 45% de la largeur qui est la moitie de la section*/
+  background-color: black;
+  opacity: 0.8; /*Permet de donner la couleur plus rapprocher ou eloiner*/
+  color: whitesmoke;
+  padding: 20px;
+}
+/* Style du type du formulaire*/
+.form-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+/* Style des labels */
+form label {
+  margin-top: 10px;
+  display: block;
+}
+/*Style des champs de saisie*/
+
+form input {
+  width: 100%; /*Champs qui prennent toute la largeur disponible*/
+  padding: 6px; /* Ajoute l'espace a l'interieur*/
+  margin-top: 5px; /* Espace externe du haut de chaque champ*/
+  border-radius: 5px;
+  border: none; /* Permet d'enlever les bordures*/
+}
+/* Style du bouton*/
+button {
+  width: 100%; /*Le bouton prend toute la largeur*/
+  padding: 6px;
+  margin-top: 15px; /* Espacement au dessus du bouton*/
+  border: none; /* Enlever les bordures du bouton*/
+  background-color: blueviolet;
+  font-size: 16px;
+  font-weight: bold;
+  font-style: italic;
+}
+/* =====VIDEO=====*/
+
+/*Conteneur de la video*/
+
+.video-section {
+  width: 45%; /* Ca prend la moitie de la section*/
+}
+/*Style de la video*/
+
+.video-section video {
+  width: 100%; /* la video prend toute la largeur de div*/
+  border-radius: 8px; /* Arrondi legerement les coins de la video*/
+}
+/*===== PIED DE PAGE =====*/
+footer {
+  background-color: black;
+  color: azure;
+  padding: 15px;
+  text-align: center;
+  margin-top: 50px;
+}
+/*=====Responsivite=====*/
+/*Règles CSS appliquées aux écrans de taille inférieure a 568px*/
+@media (max-width: 768px) {
+  /*Ajustement du header: Alignement en colonne */
+  .nav-contener {
+    flex-direction: column; /* Place les elmts du div header les uns au dessus des autres*/
+    text-align: center;
+  }
+  /*Affiche les elmts du menu en colonne*/
+  .nav-links {
+    flex-direction: column; /* Place les elmts du menu en colonne*/
+    margin-top: 10px; /* Ajoute unn petit espace au dessus*/
+  }
+  .nav-links li {
+    margin: 5px 0;
+  } /* SECTION2:Formulaire et video en colonne*/
+  .content-section {
+    flex-direction: column; /*Formulaire au dessus de la video*/
+    align-items: center;
+  }
+
+  /* Style du formulaire et video*/
+  .form-section,
+  .video-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
